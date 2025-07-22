@@ -1,0 +1,8 @@
+fastapi
+uvicorn
+langchain
+langchain_groq
+python-dotenv
+fpdf
+bs4
+requests
