@@ -35,21 +35,6 @@ A modular, agent-based educational Q&A system that leverages web scraping, LLM-b
 
 ---
 
-## Architecture Overview
-
-```mermaid
-graph TD
-    A["User/Frontend"] -->|/ask| B(MCP Orchestrator)
-    B -->|/a2a| C(Scraper Tool)
-    C -->|/a2a| D(Critic Tool)
-    D -- Score < 9 -->|/a2a| E(LLM Refiner)
-    E -->|/a2a| D
-    D -- Score >= 9 -->|Final Answer| B
-    B -->|Response| A
-```
-
----
-
 ## Backend Services
 
 - **MCP Orchestrator (`mcp_server.py`)**: Receives user questions, coordinates the pipeline, and returns the final answer and trace.
@@ -221,4 +206,5 @@ Agents self-register on startup and can be discovered by tag.
 ## Contact
 
 For questions or support, contact [vardaangulati0@gmail.com] or open an issue in the repository. 
+
 
