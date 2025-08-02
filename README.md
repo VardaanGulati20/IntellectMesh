@@ -218,12 +218,7 @@ Agents self-register on startup and can be discovered by tag.
 
 ---
 
-## License
-
-MIT License (or your project’s license)
-
----
-
 ## Contact
 
-For questions or support, contact [your-email@example.com] or open an issue in the repository. 
+For questions or support, contact [vardaangulati0@gmail.com] or open an issue in the repository. 
+
