@@ -3,11 +3,8 @@
 import requests
 import json
 
-# 🧭 MCP Registry Config
 REGISTRY_URL = "http://localhost:9000"
-ENTRY_TAG = "entry"  # This should match the tag in mcp_server.py's AGENT_CARD
-
-# 🌐 Resolve the MCP Server /ask endpoint
+ENTRY_TAG = "entry"
 def resolve_entrypoint():
     try:
         res = requests.get(f"{REGISTRY_URL}/resolve", params={"tag": ENTRY_TAG})
@@ -22,7 +19,6 @@ def main():
         print("❌ No server found from registry.")
         return
 
-    # 🧾 Ask user a question
     question = input("🗨️  Ask a question: ") or "Give me a lesson plan on software testing"
     intent = "improve_answer"
 
@@ -35,12 +31,10 @@ def main():
         )
         data = response.json()
 
-        # ✅ Final Answer
         final_answer = data.get("answer", "[No answer returned]")
         print("\n✅ Final Answer:\n")
         print(final_answer)
 
-        # 🧠 Display Trace
         print("\n🧪 Pipeline Trace:")
         trace = data.get("pipeline_trace", [])
         for i, step in enumerate(trace):
@@ -54,4 +48,5 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 
